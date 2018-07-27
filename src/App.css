@@ -29,7 +29,8 @@ body {
   height: 100vh;
   width: 30vw;
   background-color: #442d41;
-  display: inline-block; }
+  display: inline-block;
+  box-shadow: inset -1.5rem 0 2rem -0.9rem rgba(241, 229, 212, 0.7); }
 
 .locations {
   width: 50%;
