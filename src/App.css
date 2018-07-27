@@ -16,12 +16,12 @@ body {
   width: 100vw; }
 
 #map {
-  height: 100%;
-  width: 70%;
+  height: 100vh;
+  width: 70vw;
   display: inline-block; }
 
 .sidebar {
   height: 100%;
   width: 30%;
-  background-color: black;
+  background-image: linear-gradient(to top right, #faa945, #f3c13a);
   display: inline-block; }
