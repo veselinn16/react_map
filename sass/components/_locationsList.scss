@@ -1,0 +1,21 @@
+.locations {
+  width: 50%;
+  height: 25%;
+  // background-color: #fb3464;
+  position: relative;
+  top: 10%;
+  left: 25%;
+  list-style-type: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba(98, 20, 39, 0.8);
+
+  &__list {
+    list-style: none;
+
+    &--location {
+    font-size: 2rem;
+    color: #fbfbfb;
+    }
+  }
+}

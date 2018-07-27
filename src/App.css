@@ -18,10 +18,27 @@ body {
 #map {
   height: 100vh;
   width: 70vw;
-  display: inline-block; }
+  display: inline-block;
+  position: absolute !important; }
 
 .sidebar {
-  height: 100%;
-  width: 30%;
-  background-image: linear-gradient(to top right, #faa945, #f3c13a);
+  height: 100vh;
+  width: 30vw;
+  background-color: #442d41;
   display: inline-block; }
+
+.locations {
+  width: 50%;
+  height: 25%;
+  position: relative;
+  top: 10%;
+  left: 25%;
+  list-style-type: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba(98, 20, 39, 0.8); }
+  .locations__list {
+    list-style: none; }
+    .locations__list--location {
+      font-size: 2rem;
+      color: #fbfbfb; }
