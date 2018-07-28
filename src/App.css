@@ -16,8 +16,7 @@ body {
   width: 100vw; }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  color: #fbfbfb; }
+  font-family: Helvetica, Arial, sans-serif; }
 
 #map {
   height: 100vh;
@@ -40,6 +39,7 @@ body {
   list-style-type: none;
   border-radius: 1rem;
   padding: 1rem;
+  color: #fbfbfb;
   text-align: center;
   box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6); }
   .locations__heading {

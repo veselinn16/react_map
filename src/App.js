@@ -6,7 +6,6 @@ import LocationsList from './components/LocationsList.js';
 
 class App extends Component {
   state = {
-    map: null,
     styles: [
       {
         "featureType": "administrative",
@@ -100,26 +99,21 @@ class App extends Component {
       }
     ],
     locations: [
-      { lat: 42.146252, lng: 24.748833, name: 'City Artistic Gallery', id: 1 },
-      { lat: 42.140500, lng: 24.745694, name: 'Singing Fountains', id: 2 },
-      { lat: 42.143704, lng: 24.749983, name: 'Hemingway', id: 3 },
-      { lat: 42.147811, lng: 24.747950, name: 'Ancient Stadium of Philipopolis', id: 4 },
-      { lat: 42.143623, lng: 24.750512, name: 'Roman Odeon of Philipopolis', id: 5 }
+      { lat: 42.146255, lng: 24.74878, name: 'City Artistic Gallery', id: 1 },
+      { lat: 42.140469, lng: 24.74578, name: 'Singing Fountains', id: 2 },
+      { lat: 42.143726, lng: 24.750003, name: 'Hemingway', id: 3 },
+      { lat: 42.147669, lng: 24.748052, name: 'Ancient Stadium of Philipopolis', id: 4 },
+      { lat: 42.143653, lng: 24.75042, name: 'Roman Odeon of Philipopolis', id: 5 }
     ],
     markers: []
   }
 
-  populateInfoWindow(marker, infowindow) {
-    if(infowindow.marker !== marker) {
-      debugger;
-      infowindow.marker = marker;
-      infowindow.setContent('<div>' + marker.name + '</div>');
-      infowindow.open(this.state.map, marker);
-      infowindow.addListener('closeclick', () => {
-        infowindow.setMarker(null);
-      })
-    }
-  }
+  // populateInfoWindow(marker, infowindow, map) {
+  //     infowindow.open(map, marker);
+  //     infowindow.addListener('closeclick', () => {
+  //       infowindow.setMarker(null);
+  //     })
+  //   }
 
   render() {
     return (
@@ -130,7 +124,6 @@ class App extends Component {
           zoom: 16,
           styles: this.state.styles
         }} onMapLoad={ map => {
-          let largeInfoWindow = new window.google.maps.InfoWindow();
 
           this.state.locations.map( location => {
             let marker = new window.google.maps.Marker({
@@ -140,11 +133,24 @@ class App extends Component {
               animation: window.google.maps.Animation.DROP,
               id: location.id
             });
-            this.setState({ map });
 
             this.state.markers.push(marker)
+
+            let infoWindow = new window.google.maps.InfoWindow({
+              content: location.name
+            });
+
+            let click = 1;
             marker.addListener('click', () => {
-              this.populateInfoWindow(this, largeInfoWindow);
+              if(click % 2 !== 0) {
+                infoWindow.open(map, marker)
+              } else {
+                infoWindow.close()
+              }
+              click += 1;
+            })
+            marker.addListener('closeclick', () => {
+              infoWindow.close()
             })
           })
         }} />
