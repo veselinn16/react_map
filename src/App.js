@@ -108,13 +108,6 @@ class App extends Component {
     markers: []
   }
 
-  // populateInfoWindow(marker, infowindow, map) {
-  //     infowindow.open(map, marker);
-  //     infowindow.addListener('closeclick', () => {
-  //       infowindow.setMarker(null);
-  //     })
-  //   }
-
   render() {
     return (
       <div className="App">
@@ -142,6 +135,11 @@ class App extends Component {
 
             let click = 1;
             marker.addListener('click', () => {
+              if(marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+              } else {
+                marker.setAnimation(window.google.maps.Animation.BOUNCE)
+              }
               if(click % 2 !== 0) {
                 infoWindow.open(map, marker)
               } else {

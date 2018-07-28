@@ -32,25 +32,31 @@ body {
   box-shadow: inset -1.5rem 0 2rem -0.9rem rgba(241, 229, 212, 0.7); }
 
 .locations {
-  width: 50%;
+  width: 68%;
   position: relative;
   top: 10%;
-  left: 25%;
+  left: 16%;
   list-style-type: none;
   border-radius: 1rem;
   padding: 1rem;
   color: #fbfbfb;
   text-align: center;
-  box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6); }
+  box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6);
+  display: flex; }
   .locations__heading {
     font-size: 2.5rem;
     font-weight: 100;
     padding: 0.5rem;
     text-transform: uppercase;
-    border-bottom: 1px solid;
-    margin-bottom: 0.5rem; }
+    border-right: 1px solid;
+    margin-right: 1.1rem;
+    writing-mode: vertical-lr;
+    text-orientation: upright; }
   .locations__list {
-    list-style: none; }
+    list-style: none;
+    display: inline-block; }
     .locations__list--location {
-      font-size: 1.8rem;
+      font-size: 2.3rem;
       margin-bottom: 0.5rem; }
+      .locations__list--location:hover {
+        border-bottom: 1px solid pink; }

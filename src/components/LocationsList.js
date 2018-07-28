@@ -8,18 +8,21 @@ class LocationsList extends Component {
   }
 
   render() {
-    return <div className="sidebar">
-        <div className="locations">
-          <h2 className="locations__heading">Locations</h2>
-          <ul className="locations__list">
-            {this.props.locations.map(location => {
-              return <li className="locations__list--location" key={location.id}>
-                  {location.name}
-                </li>;
-            })}
-          </ul>
-        </div>
-      </div>;
+    return (
+    <div className="sidebar">
+      <h1 className="main__heading">Welcome to Ploviv</h1>
+      <div className="locations">
+        <h2 className="locations__heading">Locations</h2>
+        <ul className="locations__list">
+          {this.props.locations.map(location => {
+            return <li className="locations__list--location" key={location.id}>
+                {location.name}
+              </li>;
+          })}
+        </ul>
+      </div>
+    </div>
+    )
   }
 }
 
