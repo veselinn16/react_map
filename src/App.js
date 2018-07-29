@@ -105,13 +105,21 @@ class App extends Component {
       { lat: 42.147669, lng: 24.748052, name: 'Ancient Stadium of Philipopolis', id: 4 },
       { lat: 42.143653, lng: 24.75042, name: 'Roman Odeon of Philipopolis', id: 5 }
     ],
-    markers: []
+    markers: [],
+    filteredMarkers: null
   }
+
+  filterLocations = (locations) => {
+    let newLocs = this.state.markers.filter(marker => marker.title.toLowerCase().includes(locations.toLowerCase()))
+    this.setState({markers: newLocs})
+    console.log(this.state.markers)
+  }
+    // this.setState({ markers: })
 
   render() {
     return (
       <div className="App">
-        <LocationsList markers={this.state.markers}/>
+        <LocationsList markers={this.state.markers} filterLocations={this.filterLocations}/>
         <Map id="map" options={{
           center: { lat: 42.144953, lng: 24.746555 },
           zoom: 16,

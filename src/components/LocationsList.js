@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 
 class LocationsList extends Component {
-  componentWillReceiveProps() {
-    console.log(this.props.markers.title)
+  filterLocations = (event) => {
+    this.props.filterLocations(event.target.value)
+    // for(let location of this.props.markers) {
+    //   let locs = []
+    //   locs.push(location.title);
+    //   let s = locs.filter(event.target.value);
+    //   console.log(s);
+    //   // let newLocs = locs.filter(event.target.value)
+    //   // this.props.filterLocations(newLocs)
+    // }
+    // console.log(this.props.markers[0].title)
   }
 
   render() {
@@ -19,10 +28,10 @@ class LocationsList extends Component {
           })}
         </ul>
       </div>
-      {/* <div className="filter__section">
-        <input type="text" className="filter__section--input" placeholder="Filter Locations" id="filter"/>
+      <div className="filter__section">
+        <input type="text" className="filter__section--input" placeholder="Filter Locations" id="filter" onChange={this.filterLocations}/>
         <label htmlFor="filter" className="filter__section--label">Filter Locations</label>
-      </div> */}
+      </div>
     </div>
     )
   }
