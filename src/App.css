@@ -43,8 +43,9 @@ body {
   box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6);
   display: flex; }
   .locations__heading {
-    font-size: 2.5rem;
-    font-weight: 100;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1.5rem;
+    font-weight: 900;
     padding: 0.5rem;
     text-transform: uppercase;
     border-right: 1px solid;

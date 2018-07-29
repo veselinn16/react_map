@@ -111,7 +111,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <LocationsList locations={this.state.locations} />
+        <LocationsList markers={this.state.markers}/>
         <Map id="map" options={{
           center: { lat: 42.144953, lng: 24.746555 },
           zoom: 16,
@@ -127,7 +127,8 @@ class App extends Component {
               id: location.id
             });
 
-            this.state.markers.push(marker)
+            this.setState(prevState => ({
+              markers: [...prevState.markers, marker]}))
 
             let infoWindow = new window.google.maps.InfoWindow({
               content: location.name
@@ -146,9 +147,6 @@ class App extends Component {
                 infoWindow.close()
               }
               click += 1;
-            })
-            marker.addListener('closeclick', () => {
-              infoWindow.close()
             })
           })
         }} />

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
 class LocationsList extends Component {
-  componentDidMount() {
-    this.props.locations.map(location => {
-      console.log(location.name)
-    })
+  componentWillReceiveProps() {
+    console.log(this.props.markers.title)
   }
 
   render() {
@@ -14,13 +12,17 @@ class LocationsList extends Component {
       <div className="locations">
         <h2 className="locations__heading">Locations</h2>
         <ul className="locations__list">
-          {this.props.locations.map(location => {
-            return <li className="locations__list--location" key={location.id}>
-                {location.name}
+          {this.props.markers.map(marker => {
+            return <li className="locations__list--location" key={marker.id}>
+                {marker.title}
               </li>;
           })}
         </ul>
       </div>
+      {/* <div className="filter__section">
+        <input type="text" className="filter__section--input" placeholder="Filter Locations" id="filter"/>
+        <label htmlFor="filter" className="filter__section--label">Filter Locations</label>
+      </div> */}
     </div>
     )
   }
