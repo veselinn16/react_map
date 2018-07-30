@@ -106,15 +106,18 @@ class App extends Component {
       { lat: 42.143653, lng: 24.75042, name: 'Roman Odeon of Philipopolis', id: 5 }
     ],
     markers: [],
-    filteredMarkers: null
+    filterMarkers: []
   }
 
-  filterLocations = (locations) => {
-    let newLocs = this.state.markers.filter(marker => marker.title.toLowerCase().includes(locations.toLowerCase()))
-    this.setState({markers: newLocs})
-    console.log(this.state.markers)
+  filterLocations = (query) => {
+    let filteredLocations = []
+    for(let marker of this.state.filterMarkers) {
+      if(marker.title.toLowerCase().includes(query.toLowerCase())) {
+        filteredLocations.push(marker)
+      }
+    }
+    this.setState({markers: filteredLocations})
   }
-    // this.setState({ markers: })
 
   render() {
     return (
@@ -136,7 +139,10 @@ class App extends Component {
             });
 
             this.setState(prevState => ({
-              markers: [...prevState.markers, marker]}))
+              markers: [...prevState.markers, marker],
+              filterMarkers: [...prevState.filterMarkers, marker]
+            })
+            )
 
             let infoWindow = new window.google.maps.InfoWindow({
               content: location.name
