@@ -3,15 +3,6 @@ import React, { Component } from 'react';
 class LocationsList extends Component {
   filterLocations = (event) => {
     this.props.filterLocations(event.target.value)
-    // for(let location of this.props.markers) {
-    //   let locs = []
-    //   locs.push(location.title);
-    //   let s = locs.filter(event.target.value);
-    //   console.log(s);
-    //   // let newLocs = locs.filter(event.target.value)
-    //   // this.props.filterLocations(newLocs)
-    // }
-    // console.log(this.props.markers[0].title)
   }
 
   render() {
