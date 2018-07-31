@@ -175,10 +175,16 @@ class App extends Component {
     this.setState({ markers: filteredLocations })
   }
 
+  selectMarker = (location) => {
+    for (let marker of this.state.markers) {
+      (marker.title === location) && window.google.maps.event.trigger(marker, 'click')
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <LocationsList markers={this.state.markers} filterLocations={this.filterLocations}/>
+        <LocationsList markers={this.state.markers} filterLocations={this.filterLocations} selectMarker={this.selectMarker}/>
         <Map id="map" loadMap={this.loadMap}/>
       </div>
     );

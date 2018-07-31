@@ -2,18 +2,11 @@ import React, { Component } from 'react';
 
 class LocationsList extends Component {
   filterLocations = (event) => {
-    this.props.filterLocations(event.target.value)
-    
+    this.props.filterLocations(event.target.value)    
   }
 
-  componentWillReceiveProps() {
-    let locs = [];
-    let locas = document.getElementsByClassName("locations__list--location");
-    for (let loc of locas) {
-      let text = loc.innerText;
-      locs.push(text);
-    }
-    console.log(locs);
+  selectMarker = (event) => {
+    this.props.selectMarker(event.target.innerText)
   }
 
   render() {
@@ -24,7 +17,7 @@ class LocationsList extends Component {
         <h2 className="locations__heading">Locations</h2>
         <ul className="locations__list">
           {this.props.markers.map(marker => {
-            return <li className="locations__list--location" key={marker.id}>
+            return <li className="locations__list--location" key={marker.id} onClick={this.selectMarker}>
                 {marker.title}
               </li>;
           })}
