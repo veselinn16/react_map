@@ -3,6 +3,17 @@ import React, { Component } from 'react';
 class LocationsList extends Component {
   filterLocations = (event) => {
     this.props.filterLocations(event.target.value)
+    
+  }
+
+  componentWillReceiveProps() {
+    let locs = [];
+    let locas = document.getElementsByClassName("locations__list--location");
+    for (let loc of locas) {
+      let text = loc.innerText;
+      locs.push(text);
+    }
+    console.log(locs);
   }
 
   render() {
