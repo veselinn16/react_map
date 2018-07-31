@@ -158,61 +158,21 @@ class App extends Component {
       }))
     })
   }
-       
-  createNewMarkers = (map) => {
-    console.log("createNewMarkers() is running");
-    this.state.markers.map(marker => {
-      let newMarker = new window.google.maps.Marker({
-        position: marker.position,
-        map: map,
-        title: marker.title,
-        animation: window.google.maps.Animation.DROP,
-        id: marker.id
-      })
-
-      let infoWindow = new window.google.maps.InfoWindow({
-        content: marker.title
-      });
-
-      let click = 1;
-      newMarker.addListener('click', () => {
-        if (newMarker.getAnimation() !== null) {
-          newMarker.setAnimation(null);
-        } else {
-          newMarker.setAnimation(window.google.maps.Animation.BOUNCE)
-        }
-        if (click % 2 !== 0) {
-          infoWindow.open(map, newMarker)
-        } else {
-          infoWindow.close()
-        }
-        click += 1;
-      })
-    })
-  }
-
-  removeMarkers = (markers) => {
-    console.log('removeMarkers() is running')
-    for(let marker of markers) {
-      marker.setMap(null)
-    }
-  }
 
   filterLocations = (query) => {
-    console.log('filterLocations() is running')
-    
+    console.log('filterLocations() is running')    
     let filteredLocations = []
-    // console.log(query)
 
     this.state.filterMarkers.map(marker => {
-    if(marker.title.toLowerCase().includes(query.toLowerCase())) {
+      if(marker.title.toLowerCase().includes(query.toLowerCase())) {
         filteredLocations.push(marker)
-    }})
-    // console.log(filteredLocations)
+        marker.setVisible(true);
+      } else {
+        marker.setVisible(false)
+      }
+    })
 
     this.setState({ markers: filteredLocations })
-    // this.removeMarkers(this.state.markers);
-    let locs = []
   }
 
   render() {
