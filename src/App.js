@@ -103,68 +103,12 @@ class App extends Component {
       { lat: 42.148191, lng: 24.752817, name: "Old Town Plovdiv", id: 1 },
       { lat: 42.140469, lng: 24.74578, name: "Singing Fountains", id: 2 },
       { lat: 42.143726, lng: 24.750003, name: "Hemingway", id: 3 },
-      {
-        lat: 42.147669,
-        lng: 24.748052,
-        name: "Ancient Stadium of Philipopolis",
-        id: 4
-      },
-      {
-        lat: 42.146886,
-        lng: 24.751069,
-        name: "Ancient Theater of Philipopolis",
-        id: 5
-      }
-    ],
+      { lat: 42.147669, lng: 24.748052, name: "Ancient Stadium of Philipopolis", id: 4 },
+      { lat: 42.146886, lng: 24.751069, name: "Ancient Theater of Philipopolis", id: 5 }],
     map: null,
     markers: [],
-    filterMarkers: []
+    filterMarkers: [],
   };
-
-  loadDataFromAPI = () => {
-    const request = require("request");
-
-    request(
-      {
-        url: "https://api.foursquare.com/v2/venues/explore",
-        method: "GET",
-        qs: {
-          client_id: "C1WCYSQEYPAVVDEMKM11EJD0WNWGVQIL4XPRCCZXHOLQOKWS",
-          client_secret: "FDOGXOZBTZYYCNYDS2E2CHCFA5EPPFTTQHQQWAW4R5VAVH2C",
-          ll: "42.143726,24.750003",
-          query: "",
-          v: "20180323",
-          limit: 1
-        }
-      },
-      function(err, res, body) {
-        if (err) {
-          console.error(err);
-        } else {
-          let response = body;
-          let data = JSON.parse(response);
-          console.log(
-            // the response
-            data,
-            // name of city
-            data.response.headerFullLocation,
-            // name of location
-            data.response.groups[0].items[0].venue.name,
-            // address of location
-            data.response.groups[0].items[0].venue.location.address,
-            // type of location
-            data.response.groups[0].items[0].venue.categories[0].name,
-            // url of image to put in src tag
-            `${
-              data.response.groups[0].items[0].venue.categories[0].icon.prefix
-            }${
-              data.response.groups[0].items[0].venue.categories[0].icon.suffix
-            }`
-          );
-        }
-      }
-    );
-  }
 
   loadMap = () => {
     console.log("loadMap() is running");
@@ -180,39 +124,49 @@ class App extends Component {
 
     // map the state locations array to create markers with infoWindows and event listeners and push them to the state markers and filterMarkers variables
     this.state.locations.map(location => {
-      let marker = new window.google.maps.Marker({
-        position: { lat: location.lat, lng: location.lng },
-        map: map,
-        title: location.name,
-        animation: window.google.maps.Animation.DROP,
-        id: location.id
-      });
-
-      let infoWindow = new window.google.maps.InfoWindow({
-        content: marker.title
-      });
-
-      let click = 1;
-      marker.addListener("click", () => {
-        if (marker.getAnimation() !== null) {
-          marker.setAnimation(null);
-        } else {
-          marker.setAnimation(window.google.maps.Animation.BOUNCE);
+      fetch(`https://api.foursquare.com/v2/venues/explore?client_id=C1WCYSQEYPAVVDEMKM11EJD0WNWGVQIL4XPRCCZXHOLQOKWS&client_secret=FDOGXOZBTZYYCNYDS2E2CHCFA5EPPFTTQHQQWAW4R5VAVH2C&v=20180323&ll=${location.lat},${location.lng}&limit=1`).then(response => {
+        if(response.status !== 200) {
+          alert('Failed request')
         }
-        if (click % 2 !== 0) {
-          infoWindow.open(map, marker);
-        } else {
-          infoWindow.close();
-        }
-        click += 1;
-      });
+        response.json().then( data => {
+          let marker = new window.google.maps.Marker({
+            position: { lat: location.lat, lng: location.lng },
+            map: map,
+            title: location.name,
+            animation: window.google.maps.Animation.DROP,
+            id: location.id
+          });
 
-      this.setState(prevState => ({
-        markers: [...prevState.markers, marker],
-        filterMarkers: [...prevState.filterMarkers, marker]
-      }));
+          let contentString = `<div className="infoWindow"><h1 className="infoWindow__heading">${data.response.groups[0].items[0].venue.name}</h1>
+          <p className="infoWindow__description">${data.response.groups[0].items[0].venue.categories[0].name} in ${data.response.headerFullLocation}</p></div>`;
+
+          let infoWindow = new window.google.maps.InfoWindow({
+            content: contentString
+          });
+
+          let click = 1;
+          marker.addListener("click", () => {
+            if (marker.getAnimation() !== null) {
+              marker.setAnimation(null);
+            } else {
+              marker.setAnimation(window.google.maps.Animation.BOUNCE);
+            }
+            if (click % 2 !== 0) {
+              infoWindow.open(map, marker);
+            } else {
+              infoWindow.close();
+            }
+            click += 1;
+          });
+
+          this.setState(prevState => ({
+            markers: [...prevState.markers, marker],
+            filterMarkers: [...prevState.filterMarkers, marker]
+          }));
+        })
+      })
     });
-    this.loadDataFromAPI();
+    // this.loadDataFromAPI();
   };
 
   filterLocations = query => {

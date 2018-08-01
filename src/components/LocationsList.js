@@ -25,7 +25,7 @@ class LocationsList extends Component {
       </div>
       <h2 className="filter__section--heading">Filter Locations</h2>
       <div className="filter__section">
-        <input type="text" className="filter__section--input" placeholder="Filter Locations" id="filter" onChange={this.filterLocations}/>
+        <input type="text" className="filter__section--input" placeholder="Filter Locations" role="search" id="filter" onChange={this.filterLocations}/>
         <label htmlFor="filter" className="filter__section--label">Filter Locations</label>
       </div>
     </div>
