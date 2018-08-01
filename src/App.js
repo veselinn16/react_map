@@ -100,10 +100,10 @@ class App extends Component {
     ],
 
     locations: [
-      { lat: 42.148191, lng: 24.752817, name: "Old Town Plovdiv", id: 1 },
+      { lat: 42.1495163, lng: 24.7522388, name: "Nebet Tepe", id: 1 },
       { lat: 42.140469, lng: 24.74578, name: "Singing Fountains", id: 2 },
-      { lat: 42.143726, lng: 24.750003, name: "Hemingway", id: 3 },
-      { lat: 42.147669, lng: 24.748052, name: "Ancient Stadium of Philipopolis", id: 4 },
+      { lat: 42.1501993, lng: 24.7455469, name: "Basquiat Café & Boutique", id: 3 },
+      { lat: 42.1474261, lng: 24.7461507, name: "Ancient Stadium of Philipopolis", id: 4 },
       { lat: 42.146886, lng: 24.751069, name: "Ancient Theater of Philipopolis", id: 5 }],
     map: null,
     markers: [],
