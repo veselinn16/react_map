@@ -137,8 +137,8 @@ class App extends Component {
             id: location.id
           });
 
-          let contentString = `<div className="infoWindow"><h1 className="infoWindow__heading">${data.response.groups[0].items[0].venue.name}</h1>
-          <p className="infoWindow__description">${data.response.groups[0].items[0].venue.categories[0].name} in ${data.response.headerFullLocation}</p></div>`;
+          let contentString = `<div class="infoWindow"><h2 class="infoWindow__heading">${data.response.groups[0].items[0].venue.name}</h2>
+          <p class="infoWindow__description">${data.response.groups[0].items[0].venue.categories[0].name} in ${data.response.headerFullLocation}</p></div>`;
 
           let infoWindow = new window.google.maps.InfoWindow({
             content: contentString

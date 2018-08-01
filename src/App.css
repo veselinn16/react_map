@@ -75,7 +75,8 @@ body {
     text-align: center;
     color: #fbfbfb;
     font-size: 2.2rem;
-    font-weight: 100; }
+    font-weight: 100;
+    letter-spacing: 1px; }
   .filter__section--input {
     font-size: 1.5rem;
     font-family: inherit;
@@ -99,6 +100,12 @@ body {
     margin-top: .7rem;
     display: block;
     transition: all .3s; }
+
+.infoWindow__heading {
+  color: #e8443a; }
+
+.infoWindow__description {
+  color: #7f1a19; }
 
 .main__heading {
   text-align: center;
