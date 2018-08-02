@@ -1,3 +1,19 @@
+/* MEDIA QUERY MANAGER
+
+0 - 600px:    Phone
+600 - 900px:  Tablet portrait
+900 - 1200px: Tablet landscape
+[1200 - 1800px] Normal range
+1800px + :    Big desktop
+
+$breakpoint argument values:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em=16px
+*/
 *,
 *::after,
 *::before {
@@ -7,6 +23,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -73,6 +98,9 @@ body {
       font-size: 2.3rem;
       cursor: pointer;
       margin-bottom: 0.5rem; }
+      @media (min-width: 112.5em) {
+        .locations__list--location {
+          font-size: 2rem; } }
       .locations__list--location:hover {
         border-bottom: 1px solid #fbfbfb; }
 
@@ -82,7 +110,6 @@ body {
   position: relative;
   left: 16%;
   border-radius: 2px;
-  box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6);
   color: #fbfbfb; }
   .filter__section--heading {
     margin: 4rem 0 1rem 0;
@@ -102,7 +129,8 @@ body {
     width: 100%;
     display: block;
     transition: all .3s;
-    color: #fbfbfb; }
+    color: #fbfbfb;
+    box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6); }
     .filter__section--input::placeholder {
       color: #fbfbfb;
       font-weight: 500; }
