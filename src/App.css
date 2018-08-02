@@ -102,10 +102,16 @@ body {
     transition: all .3s; }
 
 .infoWindow__heading {
-  color: #e8443a; }
+  color: #e8443a;
+  margin-bottom: 5px; }
 
-.infoWindow__description {
-  color: #7f1a19; }
+.infoWindow__description, .infoWindow__address {
+  color: #7f1a19;
+  margin-bottom: 9px;
+  font-weight: bold; }
+
+.infoWindow__image {
+  width: 27%; }
 
 .main__heading {
   text-align: center;

@@ -138,7 +138,9 @@ class App extends Component {
           });
 
           let contentString = `<div class="infoWindow"><h2 class="infoWindow__heading">${data.response.groups[0].items[0].venue.name}</h2>
-          <p class="infoWindow__description">${data.response.groups[0].items[0].venue.categories[0].name} in ${data.response.headerFullLocation}</p></div>`;
+          <p class="infoWindow__description">${data.response.groups[0].items[0].venue.categories[0].name} in ${data.response.headerFullLocation}</p>
+          <p class="infoWindow__address">${data.response.groups[0].items[0].venue.location.address}</p>
+          <img class="infoWindow__image" src='powered-by-foursquare-blue.png' alt='Attribution image'/></div>`;
 
           let infoWindow = new window.google.maps.InfoWindow({
             content: contentString
@@ -166,7 +168,6 @@ class App extends Component {
         })
       })
     });
-    // this.loadDataFromAPI();
   };
 
   filterLocations = query => {

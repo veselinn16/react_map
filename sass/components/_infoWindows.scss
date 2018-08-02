@@ -1,9 +1,16 @@
 .infoWindow {
   &__heading {
     color: #e8443a;
+    margin-bottom: 5px;
   }
 
-  &__description {
+  &__description, &__address {
     color: #7f1a19;
+    margin-bottom: 9px;
+    font-weight: bold;
+  }
+
+  &__image {
+    width: 27%;
   }
 }
