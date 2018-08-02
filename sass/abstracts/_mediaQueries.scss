@@ -21,11 +21,11 @@ $breakpoint argument values:
     }
 
     @if $breakpoint == tab-port {
-        @media (max-width: 56.25em) { @content }; //900px
+        @media (max-width: 64em) { @content }; //900px
     }
 
     @if $breakpoint == tab-land {
-        @media (max-width: 75em) { @content }; //1200px
+        @media (max-width: 73.5em) { @content }; //1200px
     }
 
     @if $breakpoint == big-desktop {

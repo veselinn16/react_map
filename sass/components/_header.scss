@@ -4,6 +4,51 @@
   background-color: #442d41;
   padding-top: 5px;
 
+  &__menu__button {
+    background-color: #fbfbfb;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    box-shadow: 0 1rem 3rem rgba(0,0,0, .1);
+    margin-left: 1rem;
+    //to center the icon
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__menu__icon {
+    position: relative;
+    margin-top: 2.9rem;
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: grey;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;            
+    }
+
+    &::before { top: .8rem;}
+    &::after { top: -.8rem;}
+  }
+
+  &__menu__button:hover &__menu__icon::before {
+      top: 1rem;
+  }
+
+  &__menu__button:hover &__menu__icon::after {
+      top: -1rem;
+  }
+
   &__heading {
     text-align: center;
     font-family: 'Berkshire Swash', cursive;

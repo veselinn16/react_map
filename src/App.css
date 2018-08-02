@@ -23,10 +23,10 @@ $breakpoint argument values:
 
 html {
   font-size: 62.5%; }
-  @media (max-width: 75em) {
+  @media (max-width: 73.5em) {
     html {
       font-size: 56.25%; } }
-  @media (max-width: 56.25em) {
+  @media (max-width: 64em) {
     html {
       font-size: 50%; } }
   @media (min-width: 112.5em) {
@@ -48,6 +48,37 @@ body {
   height: 6vh;
   background-color: #442d41;
   padding-top: 5px; }
+  .header__menu__button {
+    background-color: #fbfbfb;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    margin-left: 1rem;
+    text-align: center;
+    cursor: pointer; }
+  .header__menu__icon {
+    position: relative;
+    margin-top: 2.9rem; }
+    .header__menu__icon, .header__menu__icon::before, .header__menu__icon::after {
+      width: 3rem;
+      height: 2px;
+      background-color: grey;
+      display: inline-block; }
+    .header__menu__icon::before, .header__menu__icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s; }
+    .header__menu__icon::before {
+      top: .8rem; }
+    .header__menu__icon::after {
+      top: -.8rem; }
+  .header__menu__button:hover .header__menu__icon::before {
+    top: 1rem; }
+  .header__menu__button:hover .header__menu__icon::after {
+    top: -1rem; }
   .header__heading {
     text-align: center;
     font-family: 'Berkshire Swash', cursive;
@@ -95,7 +126,7 @@ body {
     list-style: none;
     display: inline-block; }
     .locations__list--location {
-      font-size: 2.3rem;
+      font-size: 2rem;
       cursor: pointer;
       margin-bottom: 0.5rem; }
       @media (min-width: 112.5em) {
@@ -116,7 +147,7 @@ body {
     font-family: 'Berkshire Swash', cursive;
     text-align: center;
     color: #fbfbfb;
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     font-weight: 100;
     letter-spacing: 1px; }
   .filter__section--input {
