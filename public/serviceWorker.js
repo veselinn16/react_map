@@ -12,7 +12,7 @@ self.addEventListener('install', function (event) {
         '../src/App.css',
         '../src/App.js',
         '../src/index.js',
-        '../src/powered-by-foursquare-blue.png'
+        'powered-by-foursquare-blue.png'
       ]);
     })
       .then(function () {

@@ -123,7 +123,7 @@ class App extends Component {
     this.setState({ map: map });
 
     // map the state locations array to create markers with infoWindows and event listeners and push them to the state markers and filterMarkers variables
-    this.state.locations.map(location => {
+    this.state.locations.forEach(location => {
       fetch(`https://api.foursquare.com/v2/venues/explore?client_id=C1WCYSQEYPAVVDEMKM11EJD0WNWGVQIL4XPRCCZXHOLQOKWS&client_secret=FDOGXOZBTZYYCNYDS2E2CHCFA5EPPFTTQHQQWAW4R5VAVH2C&v=20180323&ll=${location.lat},${location.lng}&limit=1`).then(response => {
         if(response.status !== 200) {
           alert('Failed request')
@@ -168,13 +168,14 @@ class App extends Component {
         })
       })
     });
+    console.log()
   };
 
   filterLocations = query => {
     console.log("filterLocations() is running");
     let filteredLocations = [];
 
-    this.state.filterMarkers.map(marker => {
+    this.state.filterMarkers.forEach(marker => {
       if (marker.title.toLowerCase().includes(query.toLowerCase())) {
         filteredLocations.push(marker);
         marker.setVisible(true);
