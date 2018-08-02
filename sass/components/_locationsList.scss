@@ -1,6 +1,6 @@
 .locations {
   width: 68%;
-  // background-color: #fb3464;
+  margin-top: 8rem;
   position: relative;
   left: 16%;
   list-style-type: none;
@@ -29,6 +29,7 @@
 
     &--location {
     font-size: 2.3rem;
+    cursor: pointer;
     margin-bottom: 0.5rem;
       &:hover {
         border-bottom: 1px solid #fbfbfb;

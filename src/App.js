@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header.js';
 import Map from './components/Map.js';
 import LocationsList from './components/LocationsList.js';
 
@@ -197,6 +198,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header></Header>
         <LocationsList
           markers={this.state.markers}
           filterLocations={this.filterLocations}

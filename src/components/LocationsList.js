@@ -12,7 +12,6 @@ class LocationsList extends Component {
   render() {
     return (
     <div className="sidebar">
-      <h1 className="main__heading">Welcome to Plovdiv</h1>
       <div className="locations">
         <h2 className="locations__heading">Locations</h2>
         <ul className="locations__list">

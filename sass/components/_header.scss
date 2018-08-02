@@ -1,0 +1,14 @@
+.header {
+  width: 100vw;
+  height: 6vh;
+  background-color: #442d41;
+  padding-top: 5px;
+
+  &__heading {
+    text-align: center;
+    font-family: 'Berkshire Swash', cursive;
+    color: #fbfbfb;
+    font-size: 3.5rem;
+    font-weight: 200;
+  }
+}
