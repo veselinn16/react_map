@@ -50,21 +50,29 @@ body {
   padding-top: 5px; }
   .header__menu__button {
     background-color: #fbfbfb;
-    height: 6rem;
-    width: 6rem;
     border-radius: 50%;
     position: fixed;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1rem 3rem rgba(98, 20, 39, 0.1);
     margin-left: 1rem;
     text-align: center;
-    cursor: pointer; }
+    cursor: pointer;
+    display: none; }
+    @media (max-width: 73.5em) {
+      .header__menu__button {
+        display: inline-block;
+        width: 5.5rem;
+        height: 5.5rem; } }
+    @media (max-width: 64em) {
+      .header__menu__button {
+        width: 6rem;
+        height: 6rem; } }
   .header__menu__icon {
     position: relative;
-    margin-top: 2.9rem; }
+    margin-top: 2.7rem; }
     .header__menu__icon, .header__menu__icon::before, .header__menu__icon::after {
       width: 3rem;
       height: 2px;
-      background-color: grey;
+      background-color: #621427;
       display: inline-block; }
     .header__menu__icon::before, .header__menu__icon::after {
       content: "";
@@ -75,6 +83,9 @@ body {
       top: .8rem; }
     .header__menu__icon::after {
       top: -.8rem; }
+    @media (max-width: 64em) {
+      .header__menu__icon {
+        margin-top: 2.9rem; } }
   .header__menu__button:hover .header__menu__icon::before {
     top: 1rem; }
   .header__menu__button:hover .header__menu__icon::after {
