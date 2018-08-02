@@ -7,7 +7,7 @@ class Map extends Component {
 
   render() {
     return(
-      <div id={this.props.id} role="application"/>
+      <div id={this.props.id} aria-label="location" role="application"/>
     )
   }
 };
