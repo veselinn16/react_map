@@ -115,7 +115,7 @@ class App extends Component {
     console.log("loadMap() is running");
     // render map
     let map = new window.google.maps.Map(document.getElementById("map"), {
-      center: { lat: 42.144953, lng: 24.746555 },
+      center: { lat: 42.145560, lng: 24.748399 },
       zoom: 16,
       styles: this.state.styles
     });
