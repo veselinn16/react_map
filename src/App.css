@@ -128,6 +128,14 @@ body {
   text-align: center;
   box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6);
   display: flex; }
+  @media (max-width: 64em) {
+    .locations {
+      width: 80%;
+      left: 10%; } }
+  @media (max-width: 73.5em) {
+    .locations {
+      width: 76%;
+      left: 12%; } }
   .locations__heading {
     font-family: 'Berkshire Swash', cursive;
     font-size: 1.5rem;
@@ -158,6 +166,14 @@ body {
   left: 16%;
   border-radius: 2px;
   color: #fbfbfb; }
+  @media (max-width: 73.5em) {
+    .filter__section {
+      width: 76%;
+      left: 12%; } }
+  @media (max-width: 64em) {
+    .filter__section {
+      width: 80%;
+      left: 10%; } }
   .filter__section--heading {
     margin: 4rem 0 1rem 0;
     font-family: 'Berkshire Swash', cursive;
@@ -173,6 +189,7 @@ body {
     border-radius: 2px;
     background-color: transparent;
     border: none;
+    height: 100%;
     width: 100%;
     display: block;
     transition: all .3s;
@@ -181,6 +198,12 @@ body {
     .filter__section--input::placeholder {
       color: #fbfbfb;
       font-weight: 500; }
+      @media (max-width: 64em) {
+        .filter__section--input::placeholder {
+          font-size: 1.9rem; } }
+      @media (max-width: 73.5em) {
+        .filter__section--input::placeholder {
+          font-size: 1.7rem; } }
   .filter__section--input:placeholder-shown + .filter__section--label {
     opacity: 0;
     visibility: hidden;
