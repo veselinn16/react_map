@@ -16,6 +16,13 @@
     left: 10%;
   }
 
+  @include respond(phone) {
+    width: 50%;
+    left: 25%;
+    position: absolute;
+    top: 80%;
+  }
+
   &--heading {
     margin: 4rem 0 1rem 0;
     font-family: 'Berkshire Swash', cursive;
@@ -24,6 +31,12 @@
     font-size: 2.5rem;
     font-weight: 100;
     letter-spacing: 1px;
+
+    @include respond(phone) {
+      position: absolute;
+      top: 56%;
+      left: 39%;
+    }
   }
 
   &--input {

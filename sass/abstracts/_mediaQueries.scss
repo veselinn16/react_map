@@ -17,15 +17,15 @@ $breakpoint argument values:
 
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
-        @media (max-width: 37.5em) { @content }; //600px
+        @media (max-width: 47em) { @content }; //752px
     }
 
     @if $breakpoint == tab-port {
-        @media (max-width: 64em) { @content }; //900px
+        @media (max-width: 64em) { @content }; //1024px
     }
 
     @if $breakpoint == tab-land {
-        @media (max-width: 73.5em) { @content }; //1200px
+        @media (max-width: 73.5em) { @content }; //1176px
     }
 
     @if $breakpoint == big-desktop {

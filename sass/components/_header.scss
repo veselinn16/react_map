@@ -24,6 +24,11 @@
       width: 6rem;
       height: 6rem;
     }
+
+    @include respond(phone) {
+      display: flex;
+      flex-flow: wrap;
+    }
   }
 
   
@@ -55,6 +60,11 @@
     @include respond(tab-port) {
       margin-top: 2.9rem;
     }
+
+    @include respond(phone) {
+      position: relative;
+      left: 1.5rem;
+    }
   }
 
   &__menu__button:hover &__menu__icon::before {
@@ -71,5 +81,9 @@
     color: #fbfbfb;
     font-size: 3.5rem;
     font-weight: 200;
+
+    @include respond(phone) {
+      margin-top: 5px;
+    }
   }
 }
