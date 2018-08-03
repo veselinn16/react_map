@@ -169,8 +169,14 @@ class App extends Component {
         })
       })
     });
-    console.log()
   };
+
+  showSidebar = () => {
+    const sidebar = document.getElementsByClassName('sidebar');
+    const map = document.getElementById("map");
+    sidebar[0].classList.toggle('sidebar__invisible');
+    map.classList.toggle('map__big');
+  }
 
   filterLocations = query => {
     console.log("filterLocations() is running");
@@ -198,7 +204,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header></Header>
+        <Header showSidebar={this.showSidebar}></Header>
         <LocationsList
           markers={this.state.markers}
           filterLocations={this.filterLocations}

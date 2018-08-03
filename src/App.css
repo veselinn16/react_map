@@ -104,12 +104,17 @@ body {
   position: absolute !important;
   box-shadow: 0px 0px 19px 9px rgba(241, 229, 212, 0.7); }
 
+.map__big {
+  width: 100% !important; }
+
 .sidebar {
   height: 94vh;
   width: 30vw;
   background-color: #442d41;
   display: inline-block;
   box-shadow: inset -2rem 0 1.3rem -1rem rgba(241, 229, 212, 0.7); }
+  .sidebar__invisible {
+    display: none; }
 
 .locations {
   width: 68%;

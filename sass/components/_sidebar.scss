@@ -5,4 +5,8 @@
   background-color: #442d41;
   display: inline-block;
   box-shadow: inset -2rem 0 1.3rem -1rem rgba(241,229,212,0.7);
+
+  &__invisible {
+    display: none;    
+  }
 }
