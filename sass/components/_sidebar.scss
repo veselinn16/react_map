@@ -7,7 +7,7 @@
   position: relative;
 
   &__invisible {
-    display: none;    
+    display: none !important;    
   }
 
   @include respond(phone) {
