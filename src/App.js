@@ -120,8 +120,8 @@ class App extends Component {
       styles: this.state.styles
     });
 
-    // set state map variable to the newly-created map for later use
-    this.setState({ map: map });
+    // // set state map variable to the newly-created map for later use
+    // this.setState({ map: map });
 
     // map the state locations array to create markers with infoWindows and event listeners and push them to the state markers and filterMarkers variables
     this.state.locations.forEach(location => {
