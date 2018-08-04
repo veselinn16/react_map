@@ -23,6 +23,9 @@ $breakpoint argument values:
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 42.8em) {
+    html {
+      font-size: 27%; } }
   @media (max-width: 73.5em) {
     html {
       font-size: 56.25%; } }
@@ -180,6 +183,9 @@ body {
     @media (max-width: 47em) {
       .locations__heading {
         font-size: 1.6rem; } }
+    @media (max-width: 42.8em) {
+      .locations__heading {
+        display: none; } }
   .locations--heading {
     position: absolute;
     text-align: center; }

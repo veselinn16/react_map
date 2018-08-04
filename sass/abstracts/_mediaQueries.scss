@@ -16,6 +16,10 @@ $breakpoint argument values:
 */
 
 @mixin respond($breakpoint) {
+    @if $breakpoint == phone2 {
+        @media (max-width: 42.8em) {@content}; //684.8px
+    }
+
     @if $breakpoint == phone {
         @media (max-width: 47em) { @content }; //752px
     }
