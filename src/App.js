@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header.js';
 import Map from './components/Map.js';
@@ -110,10 +109,10 @@ class App extends Component {
   state = {
     markers: [],
     filterMarkers: [],
+    isSidebarVisible: true
   }
 
   setMarkers = (marker) => {
-    console.log('aaaaaaaa')
     this.setState(prevState => ({
       markers: [...prevState.markers, marker],
       filterMarkers: [...prevState.filterMarkers, marker]
@@ -121,10 +120,16 @@ class App extends Component {
   }
 
   showSidebar = () => {
+    const stateOfSidebar = this.state.isSidebarVisible
+
+    if (stateOfSidebar) {
+      this.setState({isSidebarVisible: false})
+    } else {
+      this.setState({ isSidebarVisible: true })
+    }
+
     const sidebar = document.getElementsByClassName('sidebar');
-    const map = document.getElementById("map");
-    sidebar[0].classList.toggle('sidebar__invisible');
-    map.classList.toggle('map__big');
+    sidebar[0].classList.toggle(this.props.isVisible ? '' : 'sidebar__invisible');
   }
 
   filterLocations = query => {
@@ -151,6 +156,7 @@ class App extends Component {
   };
 
   render() {
+    const {isSidebarVisible} = this.state
     return (
       <div className="App">
         <Header showSidebar={this.showSidebar}></Header>
@@ -159,7 +165,7 @@ class App extends Component {
           filterLocations={this.filterLocations}
           selectMarker={this.selectMarker}
         />
-        <Map id="map" locations={locations} styles={styles} setMarkers={this.setMarkers}/>
+        <Map id="map" isSidebarVisible={isSidebarVisible} locations={locations} styles={styles} setMarkers={this.setMarkers}/>
       </div>
     );
   }
