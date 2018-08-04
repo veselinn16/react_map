@@ -5,108 +5,109 @@ import Header from './components/Header.js';
 import Map from './components/Map.js';
 import LocationsList from './components/LocationsList.js';
 
+const locations = [
+  { lat: 42.1495163, lng: 24.7522388, name: "Nebet Tepe", id: 1 },
+  { lat: 42.140469, lng: 24.74578, name: "Singing Fountains", id: 2 },
+  { lat: 42.1501993, lng: 24.7455469, name: "Basquiat Café & Boutique", id: 3 },
+  { lat: 42.1474261, lng: 24.7461507, name: "Ancient Stadium of Philipopolis", id: 4 },
+  { lat: 42.146886, lng: 24.751069, name: "Ancient Theater of Philipopolis", id: 5 }
+]
+
+const styles = [
+  {
+    featureType: "administrative",
+    elementType: "all",
+    stylers: [
+      {
+        visibility: "on"
+      },
+      {
+        lightness: 33
+      }
+    ]
+  },
+  {
+    featureType: "landscape",
+    elementType: "all",
+    stylers: [
+      {
+        color: "#f2e5d4"
+      }
+    ]
+  },
+  {
+    featureType: "poi.park",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#c5dac6"
+      }
+    ]
+  },
+  {
+    featureType: "poi.park",
+    elementType: "labels",
+    stylers: [
+      {
+        visibility: "on"
+      },
+      {
+        lightness: 20
+      }
+    ]
+  },
+  {
+    featureType: "road",
+    elementType: "all",
+    stylers: [
+      {
+        lightness: 20
+      }
+    ]
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#c5c6c6"
+      }
+    ]
+  },
+  {
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#e4d7c6"
+      }
+    ]
+  },
+  {
+    featureType: "road.local",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#fbfaf7"
+      }
+    ]
+  },
+  {
+    featureType: "water",
+    elementType: "all",
+    stylers: [
+      {
+        visibility: "on"
+      },
+      {
+        color: "#acbcc9"
+      }
+    ]
+  }
+]
+
 class App extends Component {
   state = {
-    styles: [
-      {
-        featureType: "administrative",
-        elementType: "all",
-        stylers: [
-          {
-            visibility: "on"
-          },
-          {
-            lightness: 33
-          }
-        ]
-      },
-      {
-        featureType: "landscape",
-        elementType: "all",
-        stylers: [
-          {
-            color: "#f2e5d4"
-          }
-        ]
-      },
-      {
-        featureType: "poi.park",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#c5dac6"
-          }
-        ]
-      },
-      {
-        featureType: "poi.park",
-        elementType: "labels",
-        stylers: [
-          {
-            visibility: "on"
-          },
-          {
-            lightness: 20
-          }
-        ]
-      },
-      {
-        featureType: "road",
-        elementType: "all",
-        stylers: [
-          {
-            lightness: 20
-          }
-        ]
-      },
-      {
-        featureType: "road.highway",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#c5c6c6"
-          }
-        ]
-      },
-      {
-        featureType: "road.arterial",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#e4d7c6"
-          }
-        ]
-      },
-      {
-        featureType: "road.local",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#fbfaf7"
-          }
-        ]
-      },
-      {
-        featureType: "water",
-        elementType: "all",
-        stylers: [
-          {
-            visibility: "on"
-          },
-          {
-            color: "#acbcc9"
-          }
-        ]
-      }
-    ],
-
-    locations: [
-      { lat: 42.1495163, lng: 24.7522388, name: "Nebet Tepe", id: 1 },
-      { lat: 42.140469, lng: 24.74578, name: "Singing Fountains", id: 2 },
-      { lat: 42.1501993, lng: 24.7455469, name: "Basquiat Café & Boutique", id: 3 },
-      { lat: 42.1474261, lng: 24.7461507, name: "Ancient Stadium of Philipopolis", id: 4 },
-      { lat: 42.146886, lng: 24.751069, name: "Ancient Theater of Philipopolis", id: 5 }],
-    map: null,
     markers: [],
     filterMarkers: [],
   };
@@ -117,14 +118,14 @@ class App extends Component {
     let map = new window.google.maps.Map(document.getElementById("map"), {
       center: { lat: 42.145560, lng: 24.748399 },
       zoom: 16,
-      styles: this.state.styles
+      styles: styles
     });
 
     // // set state map variable to the newly-created map for later use
     // this.setState({ map: map });
 
     // map the state locations array to create markers with infoWindows and event listeners and push them to the state markers and filterMarkers variables
-    this.state.locations.forEach(location => {
+    locations.forEach(location => {
       fetch(`https://api.foursquare.com/v2/venues/explore?client_id=C1WCYSQEYPAVVDEMKM11EJD0WNWGVQIL4XPRCCZXHOLQOKWS&client_secret=FDOGXOZBTZYYCNYDS2E2CHCFA5EPPFTTQHQQWAW4R5VAVH2C&v=20180323&ll=${location.lat},${location.lng}&limit=1`).then(response => {
         if(response.status !== 200) {
           alert('Failed request')
