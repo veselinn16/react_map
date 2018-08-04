@@ -10,8 +10,16 @@ html {
   // this defines what 1rem is
   font-size: 62.5%; //1rem = 10px
 
+  @include respond(phone3) {
+    font-size: 29% !important;
+  }
+
   @include respond(phone2) {
-    font-size: 27%;
+    font-size: 44%;
+  }
+
+  @include respond(phone) {
+    font-size: 40%;
   }
 
   //this one is put before the landscape mode to avoid conflicts

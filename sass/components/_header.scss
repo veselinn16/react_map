@@ -16,13 +16,13 @@
 
     @include respond(tab-land) {
       display: inline-block;
-      width: 5.5rem;
-      height: 5.5rem;
+      width: 4.5rem;
+      height: 4.5rem;
     }
 
     @include respond(tab-port) {
-      width: 6rem;
-      height: 6rem;
+      width: 5rem;
+      height: 5rem;
     }
 
     @include respond(phone) {
@@ -58,12 +58,17 @@
     &::after { top: -.8rem;}
 
     @include respond(tab-port) {
-      margin-top: 2.9rem;
+      margin-top: 2.4rem;
+    }
+
+    @include respond(tab-land) {
+      margin-top: 2.2rem;
     }
 
     @include respond(phone) {
       position: relative;
-      left: 1.5rem;
+      margin-top: 2.5rem;
+      left: 1rem;
     }
   }
 

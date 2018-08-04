@@ -23,9 +23,15 @@ $breakpoint argument values:
 
 html {
   font-size: 62.5%; }
-  @media (max-width: 42.8em) {
+  @media (max-width: 22.125em) {
     html {
-      font-size: 27%; } }
+      font-size: 29% !important; } }
+  @media (min-width: 22.25em) and (max-width: 42.8em) {
+    html {
+      font-size: 44%; } }
+  @media (max-width: 47em) {
+    html {
+      font-size: 40%; } }
   @media (max-width: 73.5em) {
     html {
       font-size: 56.25%; } }
@@ -63,12 +69,12 @@ body {
     @media (max-width: 73.5em) {
       .header__menu__button {
         display: inline-block;
-        width: 5.5rem;
-        height: 5.5rem; } }
+        width: 4.5rem;
+        height: 4.5rem; } }
     @media (max-width: 64em) {
       .header__menu__button {
-        width: 6rem;
-        height: 6rem; } }
+        width: 5rem;
+        height: 5rem; } }
     @media (max-width: 47em) {
       .header__menu__button {
         display: flex;
@@ -92,11 +98,15 @@ body {
       top: -.8rem; }
     @media (max-width: 64em) {
       .header__menu__icon {
-        margin-top: 2.9rem; } }
+        margin-top: 2.4rem; } }
+    @media (max-width: 73.5em) {
+      .header__menu__icon {
+        margin-top: 2.2rem; } }
     @media (max-width: 47em) {
       .header__menu__icon {
         position: relative;
-        left: 1.5rem; } }
+        margin-top: 2.5rem;
+        left: 1rem; } }
   .header__menu__button:hover .header__menu__icon::before {
     top: 1rem; }
   .header__menu__button:hover .header__menu__icon::after {
@@ -169,7 +179,7 @@ body {
       width: 50%;
       left: 25%;
       position: absolute;
-      margin-top: 3rem; } }
+      margin-top: 1.5rem; } }
   .locations__heading {
     font-family: 'Berkshire Swash', cursive;
     font-size: 1.5rem;
@@ -182,10 +192,7 @@ body {
     text-orientation: upright; }
     @media (max-width: 47em) {
       .locations__heading {
-        font-size: 1.6rem; } }
-    @media (max-width: 42.8em) {
-      .locations__heading {
-        display: none; } }
+        font-size: 1.4rem; } }
   .locations--heading {
     position: absolute;
     text-align: center; }
@@ -196,6 +203,9 @@ body {
       font-size: 2rem;
       cursor: pointer;
       margin-bottom: 0.5rem; }
+      @media (min-width: 22.25em) and (max-width: 42.8em) {
+        .locations__list--location {
+          font-size: 1.6rem !important; } }
       @media (max-width: 47em) {
         .locations__list--location {
           font-size: 2.5rem;
@@ -239,7 +249,8 @@ body {
       .filter__section--heading {
         position: absolute;
         top: 56%;
-        left: 39%; } }
+        left: 39%;
+        margin-top: 3.5rem; } }
   .filter__section--input {
     font-size: 1.5rem;
     font-family: inherit;
