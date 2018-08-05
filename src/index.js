@@ -7,5 +7,5 @@ import registerLocalSW from "./registerLocalSW.js";
 // import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-// registerLocalSW();
+registerLocalSW();
 // registerServiceWorker();
