@@ -15,7 +15,7 @@ const LocationsList = (props) => {
         <h2 className="locations__heading">Locations</h2>
         <ul className="locations__list">
           {props.markers.map(marker => {
-            return <li className="locations__list--location" tabIndex="0" key={marker.id} onClick={selectMarker}>
+            return <li className="locations__list--location" tabIndex="0" onKeyPress={selectMarker} key={marker.id} onClick={selectMarker}>
                 {marker.title}
               </li>;
           })}
