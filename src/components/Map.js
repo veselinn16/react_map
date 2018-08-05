@@ -60,11 +60,6 @@ class Map extends Component {
     })
   }
   componentDidMount() {
-    const script = document.getElementById('map_script')
-    // Handle error while loading map
-    script.onerror = () => {
-      alert('Error loading the map!')
-    }
     this.loadMap()
   }
 
