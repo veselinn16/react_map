@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header.js';
 import Map from './components/Map.js';
 import LocationsList from './components/LocationsList.js';
+import { mapStyles } from './mapStyles.js';
 
 const locations = [
   { lat: 42.1495163, lng: 24.7522388, name: "Nebet Tepe", id: 1 },
@@ -12,98 +13,7 @@ const locations = [
   { lat: 42.146886, lng: 24.751069, name: "Ancient Theater of Philipopolis", id: 5 }
 ]
 
-const styles = [
-  {
-    featureType: "administrative",
-    elementType: "all",
-    stylers: [
-      {
-        visibility: "on"
-      },
-      {
-        lightness: 33
-      }
-    ]
-  },
-  {
-    featureType: "landscape",
-    elementType: "all",
-    stylers: [
-      {
-        color: "#f2e5d4"
-      }
-    ]
-  },
-  {
-    featureType: "poi.park",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#c5dac6"
-      }
-    ]
-  },
-  {
-    featureType: "poi.park",
-    elementType: "labels",
-    stylers: [
-      {
-        visibility: "on"
-      },
-      {
-        lightness: 20
-      }
-    ]
-  },
-  {
-    featureType: "road",
-    elementType: "all",
-    stylers: [
-      {
-        lightness: 20
-      }
-    ]
-  },
-  {
-    featureType: "road.highway",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#c5c6c6"
-      }
-    ]
-  },
-  {
-    featureType: "road.arterial",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#e4d7c6"
-      }
-    ]
-  },
-  {
-    featureType: "road.local",
-    elementType: "geometry",
-    stylers: [
-      {
-        color: "#fbfaf7"
-      }
-    ]
-  },
-  {
-    featureType: "water",
-    elementType: "all",
-    stylers: [
-      {
-        visibility: "on"
-      },
-      {
-        color: "#acbcc9"
-      }
-    ]
-  }
-]
+const styles = mapStyles
 
 class App extends Component {
   state = {
