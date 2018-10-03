@@ -1,9 +1,7 @@
 .filter__section {
   width: 68%;
   height: 5%;
-  position: relative;
-  left: 16%;
-  border-radius: 2px;
+  border-radius: 3px;
   color: #fbfbfb;
 
   @include respond(tab-land) {
@@ -52,7 +50,7 @@
     display: block;
     transition: all .3s;
     color: #fbfbfb;
-    box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6);
+    box-shadow: 0 0 2.5rem 0.6rem rgba(248, 20, 39, 0.6);
 
     &::placeholder {
       color: #fbfbfb;
