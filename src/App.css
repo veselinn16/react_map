@@ -79,10 +79,10 @@ body {
   justify-content: center;
 }
 .header__menu__button {
-  background-color: red;
+  background-color: #fbfbfb;
   border-radius: 50%;
   position: fixed;
-  box-shadow: 0 1rem 3rem rgba(98, 20, 39, 0.1);
+  box-shadow: 0 1rem 3rem rgba(248, 179, 154, 0.1);
   margin-left: 1rem;
   text-align: center;
   cursor: pointer;
@@ -167,9 +167,8 @@ body {
 
 #map {
   height: 90vh;
-  width: 70vw;
+  width: 70%;
   display: inline-block;
-  position: absolute !important;
   background: #f1e5d4;
 }
 @media (max-width: 47em) {
@@ -187,11 +186,15 @@ body {
 
 .sidebar {
   height: 90vh;
-  width: 30vw;
+  width: 30%;
   background: #c7b198;
   background-image: linear-gradient(to right bottom, #fef3f1, #fde9e2, #fbddd3, #fcd2c4, #fbc8b7);
   display: inline-block;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .sidebar__invisible {
   display: none !important;
@@ -209,8 +212,6 @@ body {
 .locations {
   width: 68%;
   margin-top: 8rem;
-  position: relative;
-  left: 16%;
   list-style-type: none;
   border-radius: 1rem;
   padding: 1rem;
@@ -291,9 +292,7 @@ body {
 .filter__section {
   width: 68%;
   height: 5%;
-  position: relative;
-  left: 16%;
-  border-radius: 2px;
+  border-radius: 3px;
   color: #fbfbfb;
 }
 @media (max-width: 73.5em) {
@@ -345,7 +344,7 @@ body {
   display: block;
   transition: all 0.3s;
   color: #fbfbfb;
-  box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6);
+  box-shadow: 0 0 2.5rem 0.6rem rgba(248, 20, 39, 0.6);
 }
 .filter__section--input::placeholder {
   color: #fbfbfb;
