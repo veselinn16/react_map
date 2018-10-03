@@ -70,12 +70,14 @@ class App extends Component {
     return (
       <div className="App">
         <Header showSidebar={this.showSidebar}></Header>
-        <LocationsList
-          markers={this.state.markers}
-          filterLocations={this.filterLocations}
-          selectMarker={this.selectMarker}
-        />
-        <Map id="map" isSidebarVisible={isSidebarVisible} locations={locations} styles={styles} setMarkers={this.setMarkers}/>
+        <div className="wrapper">
+          <LocationsList
+            markers={this.state.markers}
+            filterLocations={this.filterLocations}
+            selectMarker={this.selectMarker}
+          />
+          <Map id="map" isSidebarVisible={isSidebarVisible} locations={locations} styles={styles} setMarkers={this.setMarkers}/>
+        </div>
       </div>
     );
   }
