@@ -1,9 +1,10 @@
 .sidebar {
-  height: 94vh;
+  height: 90vh;
   width: 30vw;
-  background-color: #442d41;
+  // background-color: #442d41;
+  background: #c7b198;
+  background-image: linear-gradient(to right bottom, #fef3f1, #fde9e2, #fbddd3, #fcd2c4, #fbc8b7);
   display: inline-block;
-  box-shadow: inset -2rem 0 1.3rem -1rem rgba(241,229,212,0.7);
   position: relative;
 
   &__invisible {
