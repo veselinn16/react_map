@@ -2,7 +2,7 @@
   width: 68%;
   height: 5%;
   border-radius: 3px;
-  color: #fbfbfb;
+  color: $color-secondary;
 
   @include respond(tab-land) {
     width: 76%;
@@ -25,7 +25,7 @@
     margin: 4rem 0 1rem 0;
     font-family: 'Berkshire Swash', cursive;
     text-align: center;
-    color: #fbfbfb;
+    color: $color-secondary;
     font-size: 2.5rem;
     font-weight: 100;
     letter-spacing: 1px;
@@ -49,11 +49,12 @@
     width: 100%;
     display: block;
     transition: all .3s;
-    color: #fbfbfb;
-    box-shadow: 0 0 2.5rem 0.6rem rgba(248, 20, 39, 0.6);
+    color: $color-secondary;
+    box-shadow: 0 0 2.5rem 0.6rem $box-shadow;
+    transition: all .3s;
 
     &::placeholder {
-      color: #fbfbfb;
+      color: $color-secondary;
       font-weight: 500;
 
       @include respond(tab-port) {
@@ -63,6 +64,11 @@
       @include respond(tab-land) {
         font-size: 1.7rem;
       }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 2.5rem 1rem $box-shadow;
     }
   }
 

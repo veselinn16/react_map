@@ -2,8 +2,8 @@
   width: 100vw;
   height: 10vh;
   // background-color: #442d41;
-  // background-color: #596e79;
-  background-image: linear-gradient(to right, #fef3f1, #fbddd3, #fcd2c4, #fbc8b7);
+  background: $color-primary;
+  // background-image: linear-gradient(to right, #fef3f1, #fbddd3, #fcd2c4, #fbc8b7);
   padding-top: 5px;
   display: flex;
   flex-direction: column;
@@ -88,7 +88,7 @@
   &__heading {
     text-align: center;
     font-family: 'Berkshire Swash', cursive;
-    color: #fbfbfb;
+    color: $color-secondary;
     font-size: 3.5rem;
     font-weight: 200;
 

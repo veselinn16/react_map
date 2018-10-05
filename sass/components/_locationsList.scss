@@ -6,9 +6,9 @@
   list-style-type: none;
   border-radius: 1rem;
   padding: 1rem;
-  color: #fbfbfb;
+  color: $color-secondary;
   text-align: center;
-  box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6);
+  box-shadow: 0 0 2.5rem 0.6rem $box-shadow;
   display: flex;
 
   @include respond(tab-port) {
@@ -75,7 +75,7 @@
       font-size: 2rem;
     }
       &:hover {
-        border-bottom: 1px solid #fbfbfb;
+        border-bottom: 1px solid $color-secondary;
       }
     }
   }
