@@ -24,6 +24,7 @@ $breakpoint argument values:
 
 html {
   font-size: 62.5%;
+  background: #6897bb;
 }
 @media (max-width: 22.125em) {
   html {
@@ -67,6 +68,7 @@ body {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
+  color: #ffe4e1;
 }
 
 .wrapper {
@@ -78,7 +80,7 @@ body {
 .header {
   width: 100vw;
   height: 10vh;
-  background-image: linear-gradient(to right, #fef3f1, #fbddd3, #fcd2c4, #fbc8b7);
+  background: #6897bb;
   padding-top: 5px;
   display: flex;
   flex-direction: column;
@@ -161,7 +163,7 @@ body {
 .header__heading {
   text-align: center;
   font-family: "Berkshire Swash", cursive;
-  color: #fbfbfb;
+  color: #ffe4e1;
   font-size: 3.5rem;
   font-weight: 200;
 }
@@ -174,6 +176,7 @@ body {
 #map {
   width: 70%;
   display: inline-block;
+  border-top-left-radius: 3rem;
   background: #f1e5d4;
 }
 @media (max-width: 47em) {
@@ -191,9 +194,8 @@ body {
 
 .sidebar {
   width: 30%;
-  background-image: linear-gradient(to right bottom, #fef3f1, #fde9e2, #fbddd3, #fcd2c4, #fbc8b7);
-  display: inline-block;
-  position: relative;
+  background: #6897bb;
+  border-bottom-right-radius: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,9 +220,9 @@ body {
   list-style-type: none;
   border-radius: 1rem;
   padding: 1rem;
-  color: #fbfbfb;
+  color: #ffe4e1;
   text-align: center;
-  box-shadow: 0 0 2.5rem 0.6rem rgba(98, 20, 39, 0.6);
+  box-shadow: 0 0 2.5rem 0.6rem rgba(255, 228, 225, 0.6);
   display: flex;
 }
 @media (max-width: 64em) {
@@ -289,14 +291,14 @@ body {
   }
 }
 .locations__list--location:hover {
-  border-bottom: 1px solid #fbfbfb;
+  border-bottom: 1px solid #ffe4e1;
 }
 
 .filter__section {
   width: 68%;
   height: 5%;
   border-radius: 3px;
-  color: #fbfbfb;
+  color: #ffe4e1;
 }
 @media (max-width: 73.5em) {
   .filter__section {
@@ -322,7 +324,7 @@ body {
   margin: 4rem 0 1rem 0;
   font-family: "Berkshire Swash", cursive;
   text-align: center;
-  color: #fbfbfb;
+  color: #ffe4e1;
   font-size: 2.5rem;
   font-weight: 100;
   letter-spacing: 1px;
@@ -346,11 +348,12 @@ body {
   width: 100%;
   display: block;
   transition: all 0.3s;
-  color: #fbfbfb;
-  box-shadow: 0 0 2.5rem 0.6rem rgba(248, 20, 39, 0.6);
+  color: #ffe4e1;
+  box-shadow: 0 0 2.5rem 0.6rem rgba(255, 228, 225, 0.6);
+  transition: all 0.3s;
 }
 .filter__section--input::placeholder {
-  color: #fbfbfb;
+  color: #ffe4e1;
   font-weight: 500;
 }
 @media (max-width: 64em) {
@@ -362,6 +365,10 @@ body {
   .filter__section--input::placeholder {
     font-size: 1.7rem;
   }
+}
+.filter__section--input:focus {
+  outline: none;
+  box-shadow: 0 0 2.5rem 1rem rgba(255, 228, 225, 0.6);
 }
 .filter__section--input:placeholder-shown + .filter__section--label {
   opacity: 0;
