@@ -81,7 +81,6 @@ body {
   width: 100vw;
   height: 10vh;
   background: #6897bb;
-  padding-top: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -176,8 +175,10 @@ body {
 #map {
   width: 70%;
   display: inline-block;
-  border-top-left-radius: 3rem;
-  background: #f1e5d4;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  background: url(./map_test_image.png);
 }
 @media (max-width: 47em) {
   #map {
@@ -198,7 +199,7 @@ body {
   border-bottom-right-radius: 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .sidebar__invisible {
@@ -216,7 +217,6 @@ body {
 
 .locations {
   width: 68%;
-  margin-top: 8rem;
   list-style-type: none;
   border-radius: 1rem;
   padding: 1rem;
@@ -273,6 +273,8 @@ body {
   font-size: 2rem;
   cursor: pointer;
   margin-bottom: 0.5rem;
+  transition: color 0.5s;
+  font-family: "Berkshire Swash", cursive;
 }
 @media (min-width: 22.25em) and (max-width: 42.8em) {
   .locations__list--location {
@@ -291,7 +293,7 @@ body {
   }
 }
 .locations__list--location:hover {
-  border-bottom: 1px solid #ffe4e1;
+  color: #fff;
 }
 
 .filter__section {
@@ -355,6 +357,8 @@ body {
 .filter__section--input::placeholder {
   color: #ffe4e1;
   font-weight: 500;
+  font-family: "Berkshire Swash", cursive;
+  font-weight: lighter;
 }
 @media (max-width: 64em) {
   .filter__section--input::placeholder {
@@ -394,6 +398,11 @@ body {
 }
 .infoWindow__image {
   width: 27%;
+}
+
+.footer {
+  margin-bottom: 0.1rem;
+  text-align: center;
 }
 
 .main__heading {
