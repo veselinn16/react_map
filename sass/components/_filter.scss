@@ -56,6 +56,8 @@
     &::placeholder {
       color: $color-secondary;
       font-weight: 500;
+      font-family: 'Berkshire Swash', cursive;
+      font-weight: lighter;
 
       @include respond(tab-port) {
         font-size: 1.9rem;

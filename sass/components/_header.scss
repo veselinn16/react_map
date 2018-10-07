@@ -4,7 +4,6 @@
   // background-color: #442d41;
   background: $color-primary;
   // background-image: linear-gradient(to right, #fef3f1, #fbddd3, #fcd2c4, #fbc8b7);
-  padding-top: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,9 +33,7 @@
       display: flex;
       flex-flow: wrap;
     }
-  }
-
-  
+  }  
 
   &__menu__icon {
     position: relative;
