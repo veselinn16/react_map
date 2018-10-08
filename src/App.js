@@ -38,8 +38,14 @@ class App extends Component {
       this.setState({ isSidebarVisible: true })
     }
 
+    const menuBtn = document.querySelector('.header__wrapper-menu');
+    menuBtn.classList.toggle('open');
+
     const sidebar = document.getElementsByClassName('sidebar');
     sidebar[0].classList.toggle(this.props.isVisible ? '' : 'sidebar__invisible');
+
+    const map = document.getElementById('map');
+    map.style.width === '' || map.style.width === '70%' ? map.style.width = '100%' : map.style.width = '70%';
   }
 
   filterLocations = query => {
