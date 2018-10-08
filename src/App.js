@@ -45,7 +45,7 @@ class App extends Component {
     sidebar[0].classList.toggle(this.props.isVisible ? '' : 'sidebar__invisible');
 
     const map = document.getElementById('map');
-    map.style.width === '' || map.style.width === '70%' ? map.style.width = '100%' : map.style.width = '70%';
+    map.classList.toggle('map__big');
   }
 
   filterLocations = query => {
