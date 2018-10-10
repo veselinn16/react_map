@@ -41,9 +41,9 @@ class App extends Component {
     const menuBtn = document.querySelector('.header__wrapper-menu');
     menuBtn.classList.toggle('open');
 
-    const sidebar = document.getElementsByClassName('sidebar');
-    sidebar[0].classList.toggle(this.props.isVisible ? '' : 'sidebar__invisible');
-
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle(this.props.isVisible ? '' : 'sidebar__invisible');
+    
     const map = document.getElementById('map');
     map.classList.toggle('map__big');
   }
