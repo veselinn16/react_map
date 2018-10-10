@@ -1,5 +1,5 @@
 import React from 'react';
-// import img from "../x3.png";
+import Footer from './Footer.js';
 
 const LocationsList = (props) => {
   const filterLocations = (event) => {
@@ -27,14 +27,12 @@ const LocationsList = (props) => {
           <li className="locations__list--location">Ancient Stadium of Philipopolis</li>
         </ul>
       </div>
-      <h2 className="filter__section--heading">Locations Filter</h2>
       <div className="filter__section">
+        <h2 className="filter__section--heading">Locations Filter</h2>
         <input type="text" className="filter__section--input" placeholder="filter locations..." role="search" id="filter" onChange={filterLocations}/>
         <label htmlFor="filter" className="filter__section--label">Filter Locations</label>
       </div>
-      <footer className="footer">Copyright &copy; 2018 Veselin Tonev. <br/>
-        All rights reserved.
-      </footer>
+      <Footer />
     </div>
   )
 }
