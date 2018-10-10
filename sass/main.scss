@@ -1,9 +1,9 @@
 @import "abstracts/mediaQueries";
 @import "abstracts/colors";
+@import "abstracts/animations";
 
 @import "base/base";
 @import "base/app";
-@import "base/typography";
 
 @import "components/wrapper";
 @import "components/header";
@@ -13,5 +13,3 @@
 @import "components/filter";
 @import "components/infoWindows";
 @import "components/footer";
-
-@import "layout/heading";

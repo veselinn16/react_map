@@ -1,11 +1,11 @@
 #map {
-  // height: 100%;
   width: 70%;
   transition: all .6s;
   display: inline-block;
   border-top-left-radius: 3rem;
   border-top-right-radius: 3rem;
   background: url(./map_test_image.png);
+  animation: scaleIn 1s;
 
 
   @include respond(phone) {
@@ -19,4 +19,3 @@
 .map__big {
   transform: translateX(-20%);  
 }
-
