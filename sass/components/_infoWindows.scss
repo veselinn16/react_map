@@ -1,11 +1,11 @@
 .infoWindow {
   &__heading {
-    color: #e8443a;
+    color: $color-info-1;
     margin-bottom: 5px;
   }
 
   &__description, &__address {
-    color: #7f1a19;
+    color: $color-info-2;
     margin-bottom: 9px;
     font-weight: bold;
   }
