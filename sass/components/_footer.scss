@@ -3,4 +3,46 @@
     color: $color-secondary;  
     font-size: 1.1rem;
     text-align: center;
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 600;
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+        outline: none;
+
+        &-label {
+            transform: translate3d(0, 0, 0);
+            transition-delay: .15s;
+            display: inline-block;
+        }
+        
+        &:after {
+            content: '' attr(data-hover-label) '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            outline: none;
+            color: #7f1a19;
+            transform: translate3d(0, 140%, 0);
+        }
+
+        &:after, &-label {
+            transition: transform .2s cubic-bezier(.86, .6, .08, 1.01);
+        }
+
+        &:hover:after, &:focus:after {
+            transform: translate3d(0, 0, 0);
+            transition-duration: .3s;
+            transition-delay: .1s;
+        }
+
+        &:hover &-label, &:focus &-label {
+            transform: translate3d(0, 140%, 0);
+            transition-duration: .3s;
+            transition-delay: .1s;
+        }
+    }
 }
