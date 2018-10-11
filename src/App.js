@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header.js';
 import Map from './components/Map.js';
 import LocationsList from './components/LocationsList.js';
-import { mapStyles } from './mapStyles.js';
 
 const locations = [
   { lat: 42.1495163, lng: 24.7522388, name: "Nebet Tepe", id: 1 },
@@ -12,8 +11,6 @@ const locations = [
   { lat: 42.1474261, lng: 24.7461507, name: "Ancient Stadium of Philipopolis", id: 4 },
   { lat: 42.146886, lng: 24.751069, name: "Ancient Theater of Philipopolis", id: 5 }
 ]
-
-const styles = mapStyles
 
 class App extends Component {
   state = {
@@ -72,7 +69,6 @@ class App extends Component {
   };
 
   render() {
-    const {isSidebarVisible} = this.state
     return (
       <div className="App">
         <Header showSidebar={this.showSidebar}></Header>
@@ -82,7 +78,7 @@ class App extends Component {
             filterLocations={this.filterLocations}
             selectMarker={this.selectMarker}
           />
-          <Map id="map" isSidebarVisible={isSidebarVisible} locations={locations} styles={styles} setMarkers={this.setMarkers}/>
+          <Map id="map" isSidebarVisible={this.state.isSidebarVisible} locations={locations} setMarkers={this.setMarkers}/>
         </div>
       </div>
     );
