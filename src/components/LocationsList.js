@@ -1,12 +1,12 @@
 import React from 'react';
 import Footer from './Footer.js';
 
-const LocationsList = (props) => {
+const LocationsList = props => {
   const filterLocations = (event) => {
     props.filterLocations(event.target.value)    
   }
 
-  const selectMarker = (event) => {
+  const selectMarker = event => {
     props.selectMarker(event.target.innerText)
   }
 
@@ -17,14 +17,9 @@ const LocationsList = (props) => {
         <ul className="locations__list">
           {props.markers.map(marker => {
             return <li className="locations__list--location" tabIndex="0" onKeyPress={selectMarker} key={marker.id} onClick={selectMarker}>
-                {/* {marker.title} */}
+                {marker.title}
              </li>              
           })}
-          <li className="locations__list--location">Nebet Tepe</li>
-          <li className="locations__list--location">Singing Fountains</li>
-          <li className="locations__list--location">Basquiat Café & Boutique</li>
-          <li className="locations__list--location">Ancient Stadium of Philipopolis</li>
-          <li className="locations__list--location">Ancient Stadium of Philipopolis</li>
         </ul>
       </div>
       <div className="filter__section">
