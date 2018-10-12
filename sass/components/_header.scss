@@ -20,6 +20,17 @@
       width: 13rem;
       top: -7%;
     }
+
+    @include respond(tab-land) {
+      // height: 13rem;
+      // width: 13rem;
+      // top: -5%;
+      // left: -5%;
+      height: 17rem;
+      width: 17rem;
+      top: -7%;
+      left: -7%;  
+    }
   }
 
   &__wrapper-menu {
@@ -41,6 +52,13 @@
     @include respond(big-desktop) {
       left: 59%;
     }
+
+    @include respond(tab-land) {
+      top: 59%;
+      left: 61%;
+      width: 3.5rem;
+      height: 3.5rem;
+    }
   }
 
   &__heading {
@@ -50,6 +68,10 @@
     font-size: 3.5rem;
     font-weight: 200;
 
+    @include respond(tab-land) {
+      font-size: 4.3rem; 
+    }
+    
     @include respond(phone) {
       margin-top: 5px;
     }
