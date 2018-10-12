@@ -7,7 +7,7 @@ import Sidebar from './components/Sidebar';
 const locations = [
   { lat: 42.1495163, lng: 24.7522388, name: "Nebet Tepe", id: 1 },
   { lat: 42.140469, lng: 24.74578, name: "Singing Fountains", id: 2 },
-  { lat: 42.1501993, lng: 24.7455469, name: "Basquiat Café & Boutique", id: 3 },
+  { lat: 42.1501993, lng: 24.7455469, name: "Fresh Pasta", id: 3 },
   { lat: 42.1474261, lng: 24.7461507, name: "Ancient Stadium of Philipopolis", id: 4 },
   { lat: 42.146886, lng: 24.751069, name: "Ancient Theater of Philipopolis", id: 5 }
 ]
