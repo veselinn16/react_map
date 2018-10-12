@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './Footer.js';
 
-const LocationsList = props => {
+const Sidebar = props => {
   const filterLocations = (event) => {
     props.filterLocations(event.target.value)    
   }
@@ -32,4 +32,4 @@ const LocationsList = props => {
   )
 }
 
-export default LocationsList
+export default Sidebar;
