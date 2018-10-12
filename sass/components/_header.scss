@@ -22,14 +22,10 @@
     }
 
     @include respond(tab-land) {
-      // height: 13rem;
-      // width: 13rem;
-      // top: -5%;
-      // left: -5%;
-      height: 17rem;
-      width: 17rem;
+      height: 14rem;
+      width: 15rem;
       top: -7%;
-      left: -7%;  
+      left: -6%;  
     }
   }
 
@@ -54,8 +50,8 @@
     }
 
     @include respond(tab-land) {
-      top: 58%;
-      left: 60%;
+      top: 55%;
+      left: 58%;
       width: 3.7rem;
       height: 3.7rem;
     }

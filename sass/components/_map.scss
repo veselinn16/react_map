@@ -11,12 +11,12 @@
     width: 60%; 
   }
 
-  @include respond(phone) {
-    width: 100%;
-    display: flex;
-    flex-flow: wrap;
-    box-shadow: 0px;
-  }
+  // @include respond(phone) {
+  //   width: 100%;
+  //   display: flex;
+  //   flex-flow: wrap;
+  //   box-shadow: 0px;
+  // }
 }
 
 .map__big {
