@@ -8,7 +8,7 @@ class Map extends Component {
     // render map
     let map = new window.google.maps.Map(document.getElementById('map'), {
       center: { lat: 42.145560, lng: 24.748399 },
-      zoom: 15,
+      zoom: window.screen.availWidth === 1920 ? 16 : 15,
       styles: mapStyles
     })
 
