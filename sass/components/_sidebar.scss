@@ -2,7 +2,6 @@
   width: 30%;
   transition: all .6s;
   background: $color-primary;
-  border-bottom-right-radius: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -11,12 +10,16 @@
   &__invisible {
     transform: translateX(-100%);    
   }
-  
-  @include respond(phone) {
-    display: flex;
-    flex-flow: wrap;
-    width: 100%;
-    box-shadow: 0px 0px 0px;
-    height: 30vh;
+
+  @include respond(tab-land) {
+    width: 40%;
   }
+  
+  // @include respond(phone) {
+  //   display: flex;
+  //   flex-flow: wrap;
+  //   width: 100%;
+  //   box-shadow: 0px 0px 0px;
+  //   height: 30vh;
+  // }
 }

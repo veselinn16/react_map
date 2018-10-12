@@ -4,6 +4,10 @@
     font-size: 1.1rem;
     text-align: center;
 
+    @include respond(tab-land) {
+        font-size: 1.5rem;
+    }
+
     &__link {
         text-decoration: none;
         color: inherit;

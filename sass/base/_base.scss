@@ -12,19 +12,10 @@ html {
   background: $color-primary;
 
 
-  @include respond(phone3) {
-    font-size: 29% !important;
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px
   }
-
-  @include respond(phone2) {
-    font-size: 44%;
-  }
-
-  @include respond(phone) {
-    font-size: 40%;
-  }
-
-  //this one is put before the landscape mode to avoid conflicts
+  
   @include respond(tab-land) { //width < 1200px?
     font-size: 56.25%; //1rem = 9px
   }
@@ -32,9 +23,17 @@ html {
   @include respond(tab-port) { //width < 900px?
     font-size: 50%; //1rem = 8px
   }
+  
+  @include respond(phone) {
+    font-size: 40%;
+  }
 
-  @include respond(big-desktop) {
-    font-size: 75%; //1rem = 12px
+  @include respond(phone2) {
+    font-size: 44%;
+  }
+
+  @include respond(phone3) {
+    font-size: 29%;
   }
 }
 

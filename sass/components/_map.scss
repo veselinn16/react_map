@@ -7,6 +7,9 @@
   background: url(./map_test_image.png);
   animation: scaleIn 1s;
 
+  @include respond(tab-land) {
+    width: 60%; 
+  }
 
   @include respond(phone) {
     width: 100%;
@@ -17,5 +20,9 @@
 }
 
 .map__big {
-  transform: translateX(-20%);  
+  transform: translateX(-20%);
+  
+  @include respond(tab-land) {
+    transform: translateX(-33%);
+  }
 }
