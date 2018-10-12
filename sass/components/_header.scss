@@ -4,6 +4,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 1;
+
+  @include respond(tab-port) {
+    height: 7vh;
+    width: 100vw;
+    position: absolute;
+  }
 
   &__btn {
     height: 12rem;
@@ -13,7 +20,7 @@
     left: -4%;
     border-radius: 50%;
     background: #fff;
-    z-index: 1;
+    z-index: 105;
 
     @include respond(big-desktop) {
       height: 13rem;
@@ -26,6 +33,12 @@
       width: 15rem;
       top: -7%;
       left: -6%;  
+    }
+
+    @include respond(tab-port) {
+      top: -65.8%;
+      left: -7%;
+      height: 15rem;
     }
   }
 
@@ -63,6 +76,7 @@
     color: $color-secondary;
     font-size: 3.5rem;
     font-weight: 200;
+    z-index: 99;
 
     @include respond(tab-land) {
       font-size: 4.3rem; 

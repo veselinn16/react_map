@@ -8,6 +8,11 @@
         font-size: 1.5rem;
     }
 
+    @include respond(tab-port) {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
     &__link {
         text-decoration: none;
         color: inherit;

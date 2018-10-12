@@ -1,4 +1,11 @@
 .wrapper {
     height: 90vh;
     display: flex;
+
+    @include respond(tab-port) {
+        height: min-content;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 2rem;
+    }
 }
