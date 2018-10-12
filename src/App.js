@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/Header.js';
-import Map from './components/Map.js';
-import LocationsList from './components/LocationsList.js';
+import Header from './components/Header';
+import Map from './components/Map';
+import Sidebar from './components/Sidebar';
 
 const locations = [
   { lat: 42.1495163, lng: 24.7522388, name: "Nebet Tepe", id: 1 },
@@ -73,7 +73,7 @@ class App extends Component {
       <div className="App">
         <Header showSidebar={this.showSidebar}></Header>
         <div className="wrapper">
-          <LocationsList
+          <Sidebar
             markers={this.state.markers}
             filterLocations={this.filterLocations}
             selectMarker={this.selectMarker}
