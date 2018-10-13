@@ -1,4 +1,5 @@
 # Welcome to Plovdiv by Veselin Tonev
+
 ## Description
 
 This is a single-page app, which will show you 5 of the most attractive locations in the **7th oldest city in the world**. The 5 pins each take you to a location which will demonstrate the city's diverse culture and magnetism.
@@ -9,8 +10,9 @@ The app utilizes **ReactJS**, **JavaScript**, **CSS/Sass/**, **HTML**.
 
 
 ## Features
-1. The app features a **service worker**
+1.  The app features a **service worker**
 2.  Details about every location provided by **Foursquare's APIs**.
+3.  The app is fully responsible on every viewport size. 
 3.  There is a filter, which allows you to  type and filter the locations.
 4.  Clicking on a location in the list will highlight it on the map.
 
