@@ -3,18 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "node-sass": "^4.9.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-google-maps": "^9.4.5",
     "react-scripts": "1.1.4",
-    "recompose": "^0.27.1"
+    "recompose": "^0.27.1",
+    "sass": "^1.14.2"
   },
   "scripts": {
+    "compile:sass" : "sass --watch sass/main.scss:src/App.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "compile:sass": "node-sass sass/main.scss src/App.css -w"
+    "eject": "react-scripts eject"
   }
 }
