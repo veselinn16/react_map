@@ -8,7 +8,7 @@
 
   @include respond(tab-port) {
     height: 7vh;
-    width: 100vw;
+    width: 100%;
     position: absolute;
   }
 
@@ -36,9 +36,14 @@
     }
 
     @include respond(tab-port) {
-      top: -65.8%;
+      top: -77.8%;
       left: -7%;
       height: 15rem;
+    }
+
+    @include respond(phone) {
+      top: -68.8%;
+      left: -12%;
     }
   }
 
@@ -80,10 +85,6 @@
 
     @include respond(tab-land) {
       font-size: 4.3rem; 
-    }
-    
-    @include respond(phone) {
-      margin-top: 5px;
     }
   }
 }

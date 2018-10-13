@@ -35,6 +35,10 @@
   }
 
   @include respond(tab-port) {
-    transform: translateY(-41.25%);
+    transform: translateY(-41.15%);
+  }
+
+  @include respond(phone) {
+    transform: translateY(-46.6%);
   }
 }
