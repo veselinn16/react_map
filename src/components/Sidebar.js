@@ -25,7 +25,7 @@ const Sidebar = props => {
       <div className="filter__section">
         <h2 className="filter__section--heading">Locations Filter</h2>
         <input type="text" className="filter__section--input" placeholder="filter locations..." role="search" id="filter" onChange={filterLocations}/>
-        <label htmlFor="filter" className="filter__section--label">Filter Locations</label>
+        <label htmlFor="filter" className="filter__section--label">filter Locations</label>
       </div>
       <Footer />
     </div>
