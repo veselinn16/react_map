@@ -37,6 +37,11 @@ html {
   }
 }
 
+::selection {
+  background: #fff;
+  color: $color-primary;
+}
+
 body {
   box-sizing: border-box;
 }

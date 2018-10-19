@@ -55,6 +55,11 @@ html {
   }
 }
 
+::selection {
+  background: #fff;
+  color: #6897bb;
+}
+
 body {
   box-sizing: border-box;
 }
